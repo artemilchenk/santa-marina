@@ -1,0 +1,229 @@
+@mixin easeOutAnimation($name, $duration, $delay: 0s) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+
+@mixin linearAnimation($name, $duration, $count: 1, $delay: 0s) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+  animation-iteration-count: $count;
+  -webkit-animation-iteration-count: $count;
+}
+
+@mixin absTopLeft($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin absTopRight($top: 0, $right: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+}
+
+@mixin absBottomLeft($bottom: 0, $left: 0) {
+  position: absolute;
+  left: $left;
+  bottom: $bottom;
+}
+
+@mixin absBottomRight($bottom: 0, $right: 0) {
+  position: absolute;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin absByTopHorCentered($top: 0) {
+  @extend %absoluteHorizontalCentered;
+
+  top: $top;
+}
+
+@mixin absByBottomHorCentered($bottom: 0) {
+  @extend %absoluteHorizontalCentered;
+
+  bottom: $bottom;
+}
+
+@mixin flexBox($dir: column, $jc: center, $ai: center, $gap: unset) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $dir;
+  gap: $gap;
+}
+
+@mixin circle($diametr) {
+  width: $diametr;
+  height: $diametr;
+  border-radius: 50%;
+}
+
+@mixin rectangle($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin stretchedRectangle() {
+  @include rectangle(100%, 100%);
+}
+
+@mixin square($size) {
+  @include rectangle($size, $size);
+}
+
+@mixin text($fName, $fSize, $fWeight, $fHeight: 116.099%, $align: center) {
+  font-family: $fName, sans-serif;
+  font-size: $fSize;
+  font-style: normal;
+  font-weight: $fWeight;
+  line-height: $fHeight;
+  text-align: $align;
+}
+
+@mixin textWithoutFName($fSize, $fWeight, $lHeight: 116.099%) {
+  font-size: $fSize;
+  font-style: normal;
+  font-weight: $fWeight;
+  line-height: $lHeight;
+}
+
+@mixin backgroundImage($url, $size: auto) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $size;
+}
+
+@mixin initInlineContainer($name: page) {
+  container-name: $name;
+  container-type: inline-size;
+}
+
+@mixin containerWRule($maxWidth, $name: page) {
+  @container $name (width < $maxWidth) {
+    @content;
+  }
+}
+
+@mixin unselectable() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin selectable() {
+  -webkit-touch-callout: default;
+  -webkit-user-select: auto;
+  -khtml-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+}
+
+@mixin eventAvailable() {
+  @include selectable;
+  pointer-events: auto;
+}
+
+@mixin eventUnavailable() {
+  @include unselectable;
+  pointer-events: none;
+}
+
+@mixin opacityVisibility($containerName: visible) {
+  opacity: 0;
+  &.#{$containerName} {
+    opacity: 1;
+  }
+}
+
+@mixin boxShadow($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -moz-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin noBoxShadow() {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin dropShadow($x, $y, $blur, $color) {
+  -webkit-filter: drop-shadow($x $y $blur $color);
+  -moz-filter: drop-shadow($x $y $blur $color);
+  filter: drop-shadow($x $y $blur $color);
+}
+
+@mixin noDropShadow() {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+}
+
+@mixin textShadow($x, $y, $blur, $color) {
+  -webkit-text-shadow: $x $y $blur $color;
+  -moz-text-shadow: $x $y $blur $color;
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin neonTextShadow($fromColor, $toColor) {
+  text-shadow: 0 0 60px $toColor, 0 0 55px $toColor, 0 0 50px $toColor, 0 0 45px $toColor, 0 0 40px $toColor,
+    0 0 35px $toColor, 0 0 30px $toColor, 0 0 25px $toColor, 0 0 20px $fromColor, 0 0 15px $fromColor,
+    0 0 12px $fromColor, 0 0 10px $fromColor, 0 0 8px $fromColor, 0 0 6px $fromColor;
+  -webkit-text-shadow: 0 0 60px $toColor, 0 0 55px $toColor, 0 0 50px $toColor, 0 0 45px $toColor, 0 0 40px $toColor,
+    0 0 35px $toColor, 0 0 30px $toColor, 0 0 25px $toColor, 0 0 20px $fromColor, 0 0 15px $fromColor,
+    0 0 12px $fromColor, 0 0 10px $fromColor, 0 0 8px $fromColor, 0 0 6px $fromColor;
+  -moz-text-shadow: 0 0 60px $toColor, 0 0 55px $toColor, 0 0 50px $toColor, 0 0 45px $toColor, 0 0 40px $toColor,
+    0 0 35px $toColor, 0 0 30px $toColor, 0 0 25px $toColor, 0 0 20px $fromColor, 0 0 15px $fromColor,
+    0 0 12px $fromColor, 0 0 10px $fromColor, 0 0 8px $fromColor, 0 0 6px $fromColor;
+}
+
+@mixin glowingTextShadow($color) {
+  text-shadow: 0 0 12px $color, 0 0 10px $color, 0 0 8px $color, 0 0 6px $color, 0 0 4px $color;
+  -webkit-text-shadow: 0 0 12px $color, 0 0 10px $color, 0 0 8px $color, 0 0 6px $color, 0 0 4px $color;
+  -moz-text-shadow: 0 0 12px $color, 0 0 10px $color, 0 0 8px $color, 0 0 6px $color, 0 0 4px $color;
+}
+
+@mixin noTextShadow() {
+  -webkit-text-shadow: none;
+  -moz-text-shadow: none;
+  text-shadow: none;
+}
+
+@mixin grayscale($value: 1) {
+  -webkit-filter: grayscale($value);
+  -moz-filter: grayscale($value);
+  filter: grayscale($value);
+}
+
+@mixin noGrayscale() {
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+@mixin noFilter() {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+}

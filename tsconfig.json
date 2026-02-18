@@ -1,0 +1,24 @@
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./src/.nuxt/tsconfig.json",
+  "files": ["./src/types/custom.d.ts"],
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "allowUmdGlobalAccess": true,
+    "allowJs": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "lib": ["ES2020", "DOM"],
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "noEmit": true,
+    "strict": true
+  }
+}

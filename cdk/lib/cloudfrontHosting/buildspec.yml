@@ -1,0 +1,26 @@
+version: 0.2
+
+# env:
+#variables:
+# key: "value"
+# key: "value"
+#parameter-store:
+# key: "value"
+# key: "value"
+# secrets-manager:
+# key: secret-id:json-key:version-stage:version-id
+# key: secret-id:json-key:version-stage:version-id
+phases:
+  pre_build:
+    commands:
+      - npm ci --include=dev
+  build:
+    commands:
+      - npm run generate
+artifacts:
+  files:
+    - "**/*"
+  base-directory: src/.output/public
+cache:
+  paths:
+    - node_modules/**/*

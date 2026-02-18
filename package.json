@@ -1,0 +1,62 @@
+{
+  "name": "costa-rica-tourism",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "document": "vue-docgen",
+    "check-format": "prettier ./src !**/aframe-components --check",
+    "fix-format": "prettier ./src !**/aframe-components --write"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config-vue": "^0.39.4",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/webpack-builder": "^3.9.3",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/i18n": "^8.0.0",
+    "@nuxtjs/style-resources": "^2.0.0",
+    "@types/aframe": "^1.2.7",
+    "@types/node": "^18.15.11",
+    "@types/qrcode": "^1.5.5",
+    "@types/three": "^0.164.0",
+    "@vueuse/core": "^9.13.0",
+    "@vueuse/nuxt": "^9.13.0",
+    "eslint": "^8.37.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.14.1",
+    "nuxt": "^3.9.3",
+    "sass": "^1.61.0",
+    "sass-loader": "^13.2.2",
+    "vue-docgen-cli": "^4.65.2",
+    "webpack": "^5.77.0"
+  },
+  "overrides": {
+    "vue": "latest"
+  },
+  "dependencies": {
+    "@gtm-support/vue-gtm": "^2.0.0",
+    "@metalitix/metalitix-aframe": "^1.4.1",
+    "@pinia/nuxt": "^0.5.1",
+    "@snap/camera-kit": "^0.15.1",
+    "@types/howler": "^2.2.12",
+    "@userback/vue": "^0.3.0",
+    "device-detector-js": "^3.0.3",
+    "howler": "^2.2.4",
+    "pinia": "^2.1.7",
+    "qrcode": "^1.5.4",
+    "three": "^0.164.0"
+  },
+  "engines": {
+    "node": ">=18.14.0",
+    "npm": ">=9.3.1"
+  }
+}

@@ -1,0 +1,14 @@
+// Font Face Registration
+@font-face {
+  font-family: 'GothamBook';
+  src: url('~/assets/fonts/Gotham-Book.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url('~/assets/fonts/Gotham-Bold.otf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
